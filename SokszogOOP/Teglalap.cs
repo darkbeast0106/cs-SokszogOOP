@@ -17,7 +17,7 @@ namespace SokszogOOP
 
         public double B { get => b; set => b = value; }
 
-        public double Kerulet
+        public override double Kerulet
         {
             get
             {
@@ -25,7 +25,7 @@ namespace SokszogOOP
             }
         }
 
-        public double Terulet
+        public override double Terulet
         {
             get
             {
@@ -35,9 +35,8 @@ namespace SokszogOOP
 
         public override string ToString()
         {
-            return String.Format("Téglalap: a = {0,-10:0.000} b = {1,-10:0.000}" +
-                " K = {2,-10:0.000} T = {3,-10:0.000}",
-                this.A, this.B, this.Kerulet, this.Terulet);
+            return String.Format("Téglalap: a = {0,-10:0.000} b = {1,-10:0.000} {2}",
+                this.A, this.B, base.ToString());
         }
     }
 }

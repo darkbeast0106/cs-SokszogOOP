@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SokszogOOP
 {
-    internal class Sokszog
+    internal abstract class Sokszog
     {
         private double a;
 
@@ -15,8 +15,15 @@ namespace SokszogOOP
             this.a = a;
         }
 
-        public double A { get => this.a; set => this.a = value; }
+        public virtual double A { get => this.a; set => this.a = value; }
 
+        public abstract double Kerulet { get; }
+        public abstract double Terulet { get; }
 
+        public override string ToString()
+        {
+            return String.Format("K = {0,-10:0.000} T = {1,-10:0.000}",
+                this.Kerulet, this.Terulet);
+        }
     }
 }
